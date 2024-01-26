@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: ci-helper-app
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-user-workloads-stage/psturc-tenant/ci-helper-app/ci-helper-app@sha256:9dda248fb3a53fba4aea32e14b066926b642791e160efd37456928e8f57f2d9c
+        name: quality-backend-dashboard
+        resources: {}
+status: {}

@@ -1,0 +1,22 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: ci-helper-app
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: ci-helper-app
+    app.kubernetes.io/part-of: ci-helper-app
+  name: ci-helper-appddsa
+spec:
+  port:
+    targetPort: 8000
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: ci-helper-app
+    weight: 100
+status: {}
